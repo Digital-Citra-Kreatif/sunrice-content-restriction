@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Follows sunrice/account's prefixed route names (`sunrice.account.login`, `sunrice.account.register`),
+  and pushes its styles to the layout as the account pages do (`partials.push-styles`).
 - The package: `sunrice/content-restriction`, a Sunrice plugin (`ContentRestrictionPlugin`, id
   `content-restriction`, after accounts).
   - Settings → Restricted content (`RestrictionSettings`, permission

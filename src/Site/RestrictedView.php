@@ -29,7 +29,7 @@ final class RestrictedView
             // The sign-in link brings them back to this page, which the page cache can't know: not kept.
             app(PageCache::class)->dontKeep();
             $signInUrl = $account->redirectToSignIn()->getTargetUrl();
-            $registerUrl = $account->settings()->registration && Route::has('account.register') ? $account->url('account.register') : null;
+            $registerUrl = $account->settings()->registration && Route::has('sunrice.account.register') ? $account->url('sunrice.account.register') : null;
         }
         $view->with(['signedIn' => $signedIn, 'signInUrl' => $signInUrl, 'registerUrl' => $registerUrl]);
     }
