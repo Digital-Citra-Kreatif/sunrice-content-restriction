@@ -17,7 +17,7 @@ beforeEach(function () {
 it('sends a guest to sign in, and back to the page once signed in', function () {
     siteUser();
 
-    $this->get('/blog/coffee-club')->assertRedirect(Account::url('account.login'));
+    $this->get('/blog/coffee-club')->assertRedirect(Account::url('sunrice.account.login'));
     $this->post('/account/login', ['email' => 'ana@example.com', 'password' => 'secret-pass'])->assertRedirect('http://localhost/blog/coffee-club');
     $this->get('/blog/coffee-club')->assertOk()->assertSee('About Coffee club.');
 });
@@ -40,7 +40,7 @@ it('shows a guest the message with a link to sign in, in the page\'s language', 
     $this->get('/blog/coffee-club')->assertOk()
         ->assertSee('Coffee club')->assertDontSee('About Coffee club.')
         ->assertSee('Halaman ini khusus anggota.')
-        ->assertSee(Account::url('account.login'))->assertSee(Account::url('account.register'))
+        ->assertSee(Account::url('sunrice.account.login'))->assertSee(Account::url('sunrice.account.register'))
         ->assertSee('<meta name="robots" content="noindex">', false);
     $this->get('/en/blog/coffee-club')->assertOk()->assertSee('This page is for members.');
 
@@ -90,7 +90,7 @@ it('restricts the term pages of a taxonomy, and a term on its own', function () 
     $this->get('/topics/news')->assertOk();
 
     restrictions(['taxonomies' => ['topics']]);
-    $this->get('/topics/news')->assertRedirect(Account::url('account.login'));
+    $this->get('/topics/news')->assertRedirect(Account::url('sunrice.account.login'));
 
     termAccess($news, 'everyone');
     $this->get('/topics/news')->assertOk();

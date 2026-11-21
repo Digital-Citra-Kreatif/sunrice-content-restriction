@@ -5,6 +5,7 @@
     resources/views/vendor/content-restriction/restricted.blade.php.
 --}}
 @extends(\Sunrice\Account\View\Layout::site())
+@include(\Sunrice\Account\View\Layout::view('partials.push-styles'))
 
 @push('head')
     <meta name="robots" content="noindex">
