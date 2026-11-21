@@ -72,12 +72,8 @@ jobs:
           echo "DB_USERNAME=postgres" >> $GITHUB_ENV
           echo "DB_PASSWORD=postgres" >> $GITHUB_ENV
 
-      # sunrice/account comes from its private repository: the COMPOSER_AUTH secret holds
-      # {"github-oauth": {"github.com": "<a token that may read it>"}}.
       - name: Install dependencies
         run: composer install --no-interaction --prefer-dist
-        env:
-          COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
 
       - name: Lint
         run: composer lint

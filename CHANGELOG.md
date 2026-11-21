@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- `sunrice/account` comes from Packagist: `composer.json` no longer lists its GitHub repository.
+
 ## 0.1.0 (2026-11-21)
 
 - Needs `sunrice/account` 0.1 (was its `main`). Follows its prefixed route names (`sunrice.account.login`, `sunrice.account.register`),
