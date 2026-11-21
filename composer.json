@@ -27,12 +27,6 @@
         "pestphp/pest-plugin-laravel": "^4.1",
         "spatie/laravel-responsecache": "^8.4"
     },
-    "repositories": {
-        "account": {
-            "type": "vcs",
-            "url": "https://github.com/Digital-Citra-Kreatif/sunrice-account"
-        }
-    },
     "autoload": {
         "psr-4": {
             "Sunrice\\ContentRestriction\\": "src/"
