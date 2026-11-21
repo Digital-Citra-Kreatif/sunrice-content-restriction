@@ -37,3 +37,9 @@ composer format    # Pint (fix)
 composer analyse   # Larastan
 vendor/bin/testbench serve   # the workbench site
 ```
+
+## Releasing
+
+Move the changelog's Unreleased section to `## <version> (<date>)` in a pull request, merge it, then
+run the **release** workflow (Actions → release → Run workflow) with the version: it tags
+`v<version>` on `main` and makes the GitHub release from that changelog section.
