@@ -1,8 +1,8 @@
 # Changelog
 
-## Unreleased
+## 0.1.0 (2026-11-21)
 
-- Follows sunrice/account's prefixed route names (`sunrice.account.login`, `sunrice.account.register`),
+- Needs `sunrice/account` 0.1 (was its `main`). Follows its prefixed route names (`sunrice.account.login`, `sunrice.account.register`),
   and pushes its styles to the layout as the account pages do (`partials.push-styles`).
 - The package: `sunrice/content-restriction`, a Sunrice plugin (`ContentRestrictionPlugin`, id
   `content-restriction`, after accounts).
