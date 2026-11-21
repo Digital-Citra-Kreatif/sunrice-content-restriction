@@ -1,0 +1,10 @@
+tests/ export-ignore
+workbench/ export-ignore
+.github/ export-ignore
+AGENTS.md export-ignore
+CLAUDE.md export-ignore
+CHANGELOG.md export-ignore
+pint.json export-ignore
+phpstan.neon export-ignore
+phpunit.xml export-ignore
+testbench.yaml export-ignore

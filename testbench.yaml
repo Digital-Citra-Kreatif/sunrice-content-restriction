@@ -1,0 +1,45 @@
+laravel: '@testbench'
+
+providers:
+  - Sunrice\Admin\AdminServiceProvider
+  - Sunrice\Cms\CmsServiceProvider
+  - Spatie\Honeypot\HoneypotServiceProvider
+  - Laravel\Socialite\SocialiteServiceProvider
+  - Spatie\OneTimePasswords\OneTimePasswordsServiceProvider
+  - Sunrice\Account\AccountServiceProvider
+  - Sunrice\ContentRestriction\ContentRestrictionServiceProvider
+  - Workbench\App\Providers\AdminPanelProvider
+
+migrations:
+  - workbench/database/migrations
+
+workbench:
+  start: '/admin'
+  install: true
+  health: false
+  discovers:
+    web: true
+    api: false
+    commands: false
+    components: false
+    factories: false
+    views: false
+  build:
+    - asset-publish
+    - create-sqlite-db
+    - db-wipe
+    - migrate-fresh
+  assets:
+    - sunrice-admin-assets
+    - sunrice-cms-assets
+
+# One KEY=value per line, as in a .env file.
+env:
+  - APP_NAME=Sunrice
+  - 'AUTH_MODEL="Workbench\\App\\Models\\User"'
+  - DB_CONNECTION=sqlite
+  - SESSION_DRIVER=file
+  - CACHE_STORE=file
+  - APP_URL=http://127.0.0.1:8000
+  - SUNRICE_LOCALES=id,en
+  - SUNRICE_PASSWORD_UNCOMPROMISED=false

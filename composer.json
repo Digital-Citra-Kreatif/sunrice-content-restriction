@@ -1,0 +1,70 @@
+{
+    "name": "sunrice/content-restriction",
+    "description": "Members-only content for Sunrice CMS: restrict collections, taxonomies, entries and terms to signed-in accounts or some roles, and choose what visitors who may not open them get.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "sunrice",
+        "laravel",
+        "members",
+        "restricted-content",
+        "paywall"
+    ],
+    "require": {
+        "php": "^8.4",
+        "illuminate/contracts": "^13.0",
+        "illuminate/support": "^13.0",
+        "spatie/laravel-package-tools": "^1.93",
+        "sunrice/account": "dev-main",
+        "sunrice/admin": "^0.8.1",
+        "sunrice/cms": "^0.8.1"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.0",
+        "orchestra/testbench": "^11.0",
+        "pestphp/pest": "^4.0",
+        "pestphp/pest-plugin-laravel": "^4.1",
+        "spatie/laravel-responsecache": "^8.4"
+    },
+    "repositories": {
+        "account": {
+            "type": "vcs",
+            "url": "https://github.com/Digital-Citra-Kreatif/sunrice-account"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Sunrice\\ContentRestriction\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sunrice\\ContentRestriction\\Tests\\": "tests/",
+            "Workbench\\App\\": "workbench/app/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sunrice\\ContentRestriction\\ContentRestrictionServiceProvider"
+            ],
+            "sunrice-plugins": [
+                "Sunrice\\ContentRestriction\\ContentRestrictionPlugin"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "lint": "pint --test",
+        "format": "pint",
+        "analyse": "phpstan analyse --memory-limit=1G"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable"
+}
