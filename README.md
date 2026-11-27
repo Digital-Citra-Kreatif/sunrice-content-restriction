@@ -11,6 +11,8 @@ Members-only content for [Sunrice CMS](https://github.com/Digital-Citra-Kreatif/
   open them, or kept as teasers.
 - An overridable Blade view for the message.
 
+Requires `sunrice/account` 0.2.1 or later in the 0.2 series.
+
 ```bash
 composer require sunrice/content-restriction
 php artisan migrate
