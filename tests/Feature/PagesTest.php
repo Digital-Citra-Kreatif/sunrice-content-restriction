@@ -18,7 +18,7 @@ it('sends a guest to sign in, and back to the page once signed in', function () 
     siteUser();
 
     $this->get('/blog/coffee-club')->assertRedirect(Account::url('sunrice.account.login'));
-    $this->post('/account/login', ['email' => 'ana@example.com', 'password' => 'secret-pass'])->assertRedirect('http://localhost/blog/coffee-club');
+    $this->post(Account::url('sunrice.account.login.attempt'), ['email' => 'ana@example.com', 'password' => 'secret-pass'])->assertRedirect('http://localhost/blog/coffee-club');
     $this->get('/blog/coffee-club')->assertOk()->assertSee('About Coffee club.');
 });
 
@@ -46,7 +46,7 @@ it('shows a guest the message with a link to sign in, in the page\'s language', 
 
     // The sign-in link brings them back.
     siteUser();
-    $this->post('/account/login', ['email' => 'ana@example.com', 'password' => 'secret-pass'])->assertRedirect('http://localhost/en/blog/coffee-club');
+    $this->post(Account::url('sunrice.account.login.attempt'), ['email' => 'ana@example.com', 'password' => 'secret-pass'])->assertRedirect('http://localhost/en/blog/coffee-club');
 });
 
 it('sends visitors who may not open it to a page of the site, in their language', function () {

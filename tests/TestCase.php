@@ -8,7 +8,6 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Socialite\SocialiteServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Spatie\Honeypot\HoneypotServiceProvider;
-use Spatie\OneTimePasswords\OneTimePasswordsServiceProvider;
 use Spatie\ResponseCache\ResponseCacheServiceProvider;
 use Sunrice\Account\AccountServiceProvider;
 use Sunrice\Admin\AdminServiceProvider;
@@ -29,7 +28,6 @@ class TestCase extends Orchestra
             HoneypotServiceProvider::class,
             ResponseCacheServiceProvider::class,
             SocialiteServiceProvider::class,
-            OneTimePasswordsServiceProvider::class,
             AccountServiceProvider::class,
             ContentRestrictionServiceProvider::class,
             AdminPanelProvider::class,

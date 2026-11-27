@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Require `sunrice/account` 0.2.1 or later in the 0.2 series so restricted content can run alongside Commerce.
+
 - `sunrice/account` comes from Packagist: `composer.json` no longer lists its GitHub repository.
 
 ## 0.1.0 (2026-11-21)
